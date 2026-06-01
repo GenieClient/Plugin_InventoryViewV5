@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Genie 5 Inventory View plugin (Plugin_InventoryViewV5 — port of Etherian's
+       Plugin_InventoryView from Genie 4, v1.8). References only the Genie 5
+       plugin contract (Genie.Plugins.Abstractions). Builds to a single
+       Plugin_InventoryViewV5.dll that drops into {AppData}/Genie5/Plugins/ on
+       Windows (or the platform equivalent on macOS / Linux). -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Genie.Plugins.InventoryView</RootNamespace>
+    <AssemblyName>Plugin_InventoryViewV5</AssemblyName>
+    <Version>1.8.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The plugin contract is checked in at lib/ so the project builds with no
+         NuGet feed configured. Private=false: the host already loads its own
+         copy at runtime, so we don't ship a duplicate alongside the plugin. -->
+    <Reference Include="Genie.Plugins.Abstractions">
+      <HintPath>lib\Genie.Plugins.Abstractions.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
