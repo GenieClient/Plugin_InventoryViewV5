@@ -46,7 +46,7 @@ public sealed class InventoryViewPlugin : IGeniePlugin
     // ── Identity / metadata ────────────────────────────────────────────────────
     public string Id             => "genie.inventoryview";
     public string Name           => "Inventory View";
-    public string Version        => "1.8";
+    public string Version        => "2.0";
     public string Author         => "Etherian <EtherianDR@gmail.com> (ported to Genie 5)";
     public string Description     => "Stores your character inventory and lets you search items across characters.";
     public string MinHostVersion => "5.0.0";
